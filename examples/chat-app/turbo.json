@@ -1,0 +1,37 @@
+{
+  "$schema": "./node_modules/turbo/schema.json",
+  "extends": [
+    "//"
+  ],
+  "tasks": {
+    "dev": {
+      "persistent": true,
+      "dependsOn": [
+        "next:dev",
+        "supabase:start",
+        "env"
+      ],
+      "outputs": []
+    },
+    "next:dev": {
+      "dependsOn": ["^build", "env"],
+      "cache": false
+    },
+    "supabase:start": {
+      "cache": false
+    },
+    "supabase:env": {
+      "dependsOn": [
+        "supabase:start"
+      ],
+      "outputs": [".env.supabase.local"]
+    },
+    "env": {
+      "dependsOn": [
+        "supabase:env"
+      ],
+      "inputs": [".env.supabase.local", ".env.vercel.local"],
+      "outputs": [".env.local"]
+    }
+  }
+}

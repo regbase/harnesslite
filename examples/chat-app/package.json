@@ -1,0 +1,34 @@
+{
+  "name": "chat-app",
+  "private": true,
+  "scripts": {
+    "dev": "(test -f .env.vercel.local || pnpm run vercel:env) && turbo dev",
+    "build": "next build",
+    "lint": "tsc --noEmit",
+    "next:dev": "next dev",
+    "supabase:env": "supabase status -o env --override-name api.url=NEXT_PUBLIC_SUPABASE_URL --override-name auth.anon_key=NEXT_PUBLIC_SUPABASE_ANON_KEY --override-name auth.publishable_key=NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY --override-name auth.secret_key=SUPABASE_SECRET_KEY --override-name db.url=POSTGRES_URL > .env.supabase.local",
+    "supabase:start": "supabase start -x realtime,imgproxy,mailpit,postgres-meta,edge-runtime,logflare,vector,supavisor",
+    "vercel:env": "bash ../../ai-gateway-token.sh .env.vercel.local",
+    "env": "cat .env.supabase.local .env.vercel.local > .env.local"
+  },
+  "dependencies": {
+    "@ai-sdk/react": "^2.0.76",
+    "@fs-agent/supabase": "workspace:*",
+    "@supabase/supabase-js": "^2.49.1",
+    "ai": "^6.0.141",
+    "fs-agent": "workspace:*",
+    "next": "^15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.24",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "supabase": "^2.84.4",
+    "typescript": "^5.8.3"
+  }
+}

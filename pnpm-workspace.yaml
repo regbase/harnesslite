@@ -1,2 +1,8 @@
 packages:
   - "packages/*"
+  - "examples/*"
+allowBuilds:
+  '@mongodb-js/zstd': true
+  node-liblzma: true
+  sharp: true
+  supabase: true

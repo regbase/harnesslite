@@ -1,2 +1,6 @@
 export type { FsAgentPlugin } from "./plugin";
-export { runFilesystemAgent } from "./harness";
+export { extractXmlPlugin } from "./extract-xml-plugin";
+export {
+  createFilesystemAgentHarness,
+  runFilesystemAgent,
+} from "./harness";
