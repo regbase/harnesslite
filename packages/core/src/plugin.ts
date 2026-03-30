@@ -23,6 +23,12 @@ export interface FsAgentPlugin {
   systemPrompt?(): string | Promise<string>;
 
   /**
+   * Tools to merge into the harness (after bash tools, before `options.tools`
+   * and per-run `tools`). Later plugins override earlier keys on collision.
+   */
+  registerTools?(): ToolSet | Promise<ToolSet>;
+
+  /**
    * Register custom bash commands for the agent's shell.
    * Commands from all plugins are merged together.
    */

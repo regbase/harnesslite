@@ -115,6 +115,11 @@ export function createFilesystemAgentHarness(
       sandbox: bash,
     });
 
+    const pluginToolLayers = await Promise.all(
+      plugins.map((p) => p.registerTools?.() ?? Promise.resolve({})),
+    );
+    const pluginTools = Object.assign({}, ...pluginToolLayers);
+
     // Resolve input UIMessages and convert to ModelMessages
     let inputUIMessages: UIMessage[] | undefined;
     let modelMessages: ModelMessage[] | undefined;
@@ -171,6 +176,7 @@ export function createFilesystemAgentHarness(
       },
       tools: {
         ...bashToolkit.tools,
+        ...pluginTools,
         ...(options.tools ?? {}),
         ...(tools ?? {}),
       },
