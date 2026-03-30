@@ -54,7 +54,17 @@ const runChat = createFilesystemAgentHarness({
     
 The story begins in a tavern in a small village. A war is brewing, and everyone is preparing for it. The player is an eagar young teenager travelling for the first time.`,
   maxSteps: 8,
-  plugins: [suggestions, persistence],
+  plugins: [
+    /*
+     * This plugin looks for <suggestion> tags in the output stream and transforms them into data parts which the UI renders as clickable suggestions.
+     */
+    suggestions,
+
+    /*
+     * This plugin handles saving/loading the chat messages in Supabase Storage.
+     */
+    persistence,
+  ],
 });
 
 export async function POST(req: Request) {
