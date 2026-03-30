@@ -3,7 +3,7 @@
   "private": true,
   "description": "Filesystem-based pluggable agent harness",
   "scripts": {
-    "chat-app": "pnpm --filter chat-app dev",
+    "roleplay-game": "pnpm --filter roleplay-game dev",
     "build": "turbo run build",
     "test": "turbo run test",
     "lint": "turbo run lint"

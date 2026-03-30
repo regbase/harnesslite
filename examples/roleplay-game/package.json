@@ -1,5 +1,5 @@
 {
-  "name": "chat-app",
+  "name": "roleplay-game",
   "private": true,
   "scripts": {
     "dev": "(test -f .env.vercel.local || pnpm run vercel:env) && turbo dev",
