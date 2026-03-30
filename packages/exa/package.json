@@ -1,7 +1,7 @@
 {
-  "name": "@fs-agent/exa",
+  "name": "@plugin-agent/exa",
   "version": "0.0.1",
-  "description": "Exa integration for fs-agent",
+  "description": "Exa integration for plugin-agent",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

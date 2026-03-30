@@ -1,6 +1,6 @@
 import "server-only";
 
-import { loadSupabaseChatMessages } from "@fs-agent/supabase";
+import { loadSupabaseChatMessages } from "@plugin-agent/supabase";
 import { createClient } from "@supabase/supabase-js";
 
 import { CHAT_MESSAGES_BUCKET, CHAT_MESSAGES_PATH } from "./chat-storage";

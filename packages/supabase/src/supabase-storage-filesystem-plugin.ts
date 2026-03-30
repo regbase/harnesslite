@@ -1,4 +1,4 @@
-import type { FsAgentPlugin } from "fs-agent";
+import type { PluginAgentPlugin } from "plugin-agent";
 import type { FilePart, ModelMessage, UserModelMessage } from "ai";
 import { SupabaseStorageFs } from "./supabase-storage-fs";
 import { SupabaseClient } from "@supabase/supabase-js";
@@ -20,7 +20,7 @@ export function createSupabaseStorageFilesystemPlugin(options: {
   bucketName: string;
   /** Storage path prefix inside the bucket (e.g. "my-agent/workspace-123"). */
   prefix: string;
-}): FsAgentPlugin {
+}): PluginAgentPlugin {
   const downloadCache = new Map<string, Uint8Array>();
 
   return {

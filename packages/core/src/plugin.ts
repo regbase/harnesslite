@@ -8,13 +8,13 @@ import type {
 } from "ai";
 
 /**
- * Plugin interface for extending the fs-agent harness.
+ * Plugin interface for extending the plugin-agent harness.
  *
  * The harness uses just-bash / bash-tool by default; plugins hook into
  * the agent lifecycle to add commands, wrap the filesystem, transform
  * input, and react to step / finish events.
  */
-export interface FsAgentPlugin {
+export interface PluginAgentPlugin {
   name: string;
 
   /**

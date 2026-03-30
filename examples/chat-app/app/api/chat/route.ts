@@ -1,10 +1,10 @@
 import { createClient } from "@supabase/supabase-js";
 import { createUIMessageStreamResponse, generateId } from "ai";
-import { createSupabaseMessagePersistencePlugin } from "@fs-agent/supabase";
+import { createSupabaseMessagePersistencePlugin } from "@plugin-agent/supabase";
 import {
   createFilesystemAgentHarness,
   extractXmlPlugin,
-} from "fs-agent";
+} from "plugin-agent";
 
 import { CHAT_MESSAGES_BUCKET, CHAT_MESSAGES_PATH } from "@/lib/chat-storage";
 import type { DemoMessage } from "@/lib/types";

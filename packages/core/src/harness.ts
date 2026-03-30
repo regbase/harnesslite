@@ -17,7 +17,7 @@ import {
   InMemoryFs,
   MountableFs,
 } from "just-bash";
-import type { FsAgentPlugin } from "./plugin";
+import type { PluginAgentPlugin } from "./plugin";
 
 export type VirtualFileSystem = Record<string, string>;
 
@@ -59,7 +59,7 @@ export interface FilesystemAgentHarnessOptions {
   system?: string;
   maxSteps?: number;
   tools?: Record<string, unknown>;
-  plugins?: FsAgentPlugin[];
+  plugins?: PluginAgentPlugin[];
 }
 
 const DEFAULT_MODEL = "openai/gpt-5.2";
@@ -212,7 +212,7 @@ export function createFilesystemAgentHarness(
                     await plugin.onFinish({ messages: merged, fileSystem });
                   } catch (err) {
                     console.warn(
-                      `[fs-agent] Plugin ${plugin.name} onFinish error:`,
+                      `[plugin-agent] Plugin ${plugin.name} onFinish error:`,
                       err,
                     );
                   }

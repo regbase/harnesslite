@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["fs-agent", "@fs-agent/supabase"],
+  transpilePackages: ["plugin-agent", "@plugin-agent/supabase"],
   serverExternalPackages: [
     "just-bash",
     "bash-tool",

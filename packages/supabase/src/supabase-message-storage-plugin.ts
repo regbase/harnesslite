@@ -1,5 +1,5 @@
 import type { UIMessage } from "ai";
-import type { FsAgentPlugin } from "fs-agent";
+import type { PluginAgentPlugin } from "plugin-agent";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 export interface SupabaseChatStorageOptions {
@@ -47,7 +47,7 @@ export async function loadSupabaseChatMessages(
  */
 export function createSupabaseMessagePersistencePlugin(
   options: SupabaseChatStorageOptions,
-): FsAgentPlugin {
+): PluginAgentPlugin {
   return {
     name: "supabase-message-storage",
 

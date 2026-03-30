@@ -1,7 +1,7 @@
 {
-  "name": "fs-agent",
-  "version": "0.0.1",
-  "description": "A filesystem-based pluggable agent harness",
+  "name": "plugin-agent",
+  "version": "0.0.2",
+  "description": "A filesystem-based, pluggable agent harness",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

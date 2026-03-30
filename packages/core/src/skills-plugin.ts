@@ -1,6 +1,6 @@
 import { tool } from "ai";
 import { z } from "zod";
-import type { FsAgentPlugin } from "./plugin";
+import type { PluginAgentPlugin } from "./plugin";
 
 export interface AgentSkill {
   name: string;
@@ -30,7 +30,7 @@ function skillsSystemPromptSection(skills: AgentSkill[]): string {
  */
 export function createSkillsPlugin(options: {
   skills: AgentSkill[];
-}): FsAgentPlugin {
+}): PluginAgentPlugin {
   const { skills } = options;
   const byName = new Map<string, AgentSkill>();
   for (const s of skills) {

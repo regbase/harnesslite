@@ -1,4 +1,4 @@
-export type { FsAgentPlugin } from "./plugin";
+export type { PluginAgentPlugin } from "./plugin";
 export { extractXmlPlugin } from "./extract-xml-plugin";
 export {
   createSkillsPlugin,

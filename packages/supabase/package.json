@@ -1,7 +1,7 @@
 {
-  "name": "@fs-agent/supabase",
+  "name": "@plugin-agent/supabase",
   "version": "0.0.1",
-  "description": "Supabase integration for fs-agent",
+  "description": "Supabase integration for plugin-agent",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -23,7 +23,7 @@
   "author": "Ethan Shea",
   "license": "MIT",
   "dependencies": {
-    "fs-agent": "workspace:*",
+    "plugin-agent": "workspace:*",
     "@supabase/supabase-js": "^2.100.1",
     "ai": "^6.0.141",
     "bash-tool": "1.3.15",

@@ -1,5 +1,5 @@
 {
-  "name": "fs-agent-workspace",
+  "name": "plugin-agent-workspace",
   "private": true,
   "description": "Filesystem-based pluggable agent harness",
   "scripts": {

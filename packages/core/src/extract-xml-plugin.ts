@@ -1,5 +1,5 @@
 import type { UIMessageChunk } from "ai";
-import type { FsAgentPlugin } from "./plugin";
+import type { PluginAgentPlugin } from "./plugin";
 
 export function extractXmlPlugin({
     tagName,
@@ -9,7 +9,7 @@ export function extractXmlPlugin({
     tagName: string;
     system: string;
     onTagFinish: (params: {content: string, controller: TransformStreamDefaultController<UIMessageChunk>}) => void | Promise<void>;
-}): FsAgentPlugin {
+}): PluginAgentPlugin {
   return {
     name: "extract-xml",
     systemPrompt: () => system,
