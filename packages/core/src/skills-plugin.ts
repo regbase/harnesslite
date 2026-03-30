@@ -62,6 +62,6 @@ export function createSkillsPlugin(options: {
   return {
     name: "skills",
     systemPrompt: () => skillsSystemPromptSection(skills),
-    registerTools: () => ({ read_skill: readSkill }),
+    tools: () => ({ read_skill: readSkill }),
   };
 }

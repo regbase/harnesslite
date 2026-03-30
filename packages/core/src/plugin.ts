@@ -26,13 +26,13 @@ export interface PluginAgentPlugin {
    * Tools to merge into the harness (after bash tools, before `options.tools`
    * and per-run `tools`). Later plugins override earlier keys on collision.
    */
-  registerTools?(): ToolSet | Promise<ToolSet>;
+  tools?(): ToolSet | Promise<ToolSet>;
 
   /**
    * Register custom bash commands for the agent's shell.
    * Commands from all plugins are merged together.
    */
-  registerCommands?(): CustomCommand[] | Promise<CustomCommand[]>;
+  commands?(): CustomCommand[] | Promise<CustomCommand[]>;
 
   /**
    * Create or wrap the virtual filesystem before the bash environment starts.
@@ -62,7 +62,7 @@ export interface PluginAgentPlugin {
    */
   prepareStep?(context: { stepNumber: number }): void | Promise<void>;
 
-  uiMessageTransform?():
+  uiMessageStreamTransform?():
     | TransformStream<UIMessageChunk, UIMessageChunk>
     | Promise<TransformStream<UIMessageChunk, UIMessageChunk>>;
 

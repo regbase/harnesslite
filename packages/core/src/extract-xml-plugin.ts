@@ -13,7 +13,7 @@ export function extractXmlPlugin({
   return {
     name: "extract-xml",
     systemPrompt: () => system,
-    uiMessageTransform: () => {
+    uiMessageStreamTransform: () => {
         const openingTag = `<${tagName}>`;
         const closingTag = `<\/${tagName}>`;
 

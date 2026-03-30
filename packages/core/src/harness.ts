@@ -81,8 +81,8 @@ export function createFilesystemAgentHarness(
 
     const allCommands: CustomCommand[] = [];
     for (const plugin of plugins) {
-      if (plugin.registerCommands) {
-        const cmds = await plugin.registerCommands();
+      if (plugin.commands) {
+        const cmds = await plugin.commands();
         allCommands.push(...cmds);
       }
     }
@@ -116,7 +116,7 @@ export function createFilesystemAgentHarness(
     });
 
     const pluginToolLayers = await Promise.all(
-      plugins.map((p) => p.registerTools?.() ?? Promise.resolve({})),
+      plugins.map((p) => p.tools?.() ?? Promise.resolve({})),
     );
     const pluginTools = Object.assign({}, ...pluginToolLayers);
 
@@ -225,9 +225,9 @@ export function createFilesystemAgentHarness(
 
     let transformedUiMessages = uiStream;
     for (const plugin of plugins) {
-      if (plugin.uiMessageTransform) {
+      if (plugin.uiMessageStreamTransform) {
         transformedUiMessages = transformedUiMessages.pipeThrough(
-          await plugin.uiMessageTransform(),
+          await plugin.uiMessageStreamTransform(),
         );
       }
     }
