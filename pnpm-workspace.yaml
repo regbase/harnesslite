@@ -1,6 +1,12 @@
 packages:
   - "packages/*"
   - "examples/*"
+# Dependabot cannot raise a transitive package past the range its parent allows.
+overrides:
+  "brace-expansion@>=4.0.0 <5.0.12": ^5.0.12
+  "minimatch@<11.0.1": ^11.0.1
+  "source-map-js@<1.2.2": ^1.2.2
+
 allowBuilds:
   '@mongodb-js/zstd': true
   node-liblzma: true
